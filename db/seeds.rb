@@ -13,3 +13,6 @@ table = Project.create(user_id: 3, title: "Table", budget: 100, details: Faker::
 #Supplies
 needles = Supply.create(label: "Needles", price: 5, quantity: 4, image_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/kids-string-card-1524848870.jpg?crop=1.00xw:0.667xh;0,0.0874xh&resize=480:*", place_purchased: "Michael's", description: Faker::TvShows::HowIMetYourMother.quote)
 yarn = Supply.create(label: "Yarn", price: 15, quantity: 2, image_url: "https://i.pinimg.com/originals/cd/22/52/cd225281dff67979c53fd5a47670c278.jpg", place_purchased: "JoAnn's", description: Faker::TvShows::HowIMetYourMother.quote)
+
+#Inventory
+item1 = Material.create(project_id: 1, supply_id: 1)
