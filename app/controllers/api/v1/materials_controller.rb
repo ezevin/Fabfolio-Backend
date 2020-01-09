@@ -5,21 +5,21 @@ class Api::V1::MaterialsController < ApplicationController
   end
 
   def show
-    @Material = Material.find(params[:id])
-    render json: @Material
+    @material = Material.find(params[:id])
+    render json: @material
   end
 
   def create
-    @Material = Material.create(Material_params)
-    render json: @Material
+    @material = Material.create(Material_params)
+    render json: @material
   end
 
   def update
-    @Material = Material.find(params[:id])
+    @material = Material.find(params[:id])
 
-      @Material.update(Material_params)
+      @material.update(Material_params)
 
-    render json: @Material
+    render json: @material
   end
 
   def destroy
@@ -29,10 +29,10 @@ class Api::V1::MaterialsController < ApplicationController
   private
 
   def get_Material
-    @Material = Material.find(params[:id])
+    @material = Material.find(params[:id])
   end
 
   def Material_params
-      params.require(:Material).permit(:project_id, :supply_id)
+      params.require(:material).permit(:project_id, :supply_id)
   end
 end

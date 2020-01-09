@@ -14,8 +14,11 @@ table = Project.create(user_id: 3, title: "Table", budget: 100, details: Faker::
 needles = Supply.create(label: "Needles", price: 5, quantity: 4, image_url: "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/kids-string-card-1524848870.jpg?crop=1.00xw:0.667xh;0,0.0874xh&resize=480:*", place_purchased: "Michael's", description: Faker::TvShows::HowIMetYourMother.quote)
 yarn = Supply.create(label: "Yarn", price: 15, quantity: 2, image_url: "https://i.pinimg.com/originals/cd/22/52/cd225281dff67979c53fd5a47670c278.jpg", place_purchased: "JoAnn's", description: Faker::TvShows::HowIMetYourMother.quote)
 
-#Inventory
+#Materials
 item1 = Material.create(project_id: 1, supply_id: 1)
 
 #Tools
 scissor = Tool.create(user_id: 1, label: "craft scissors", category: "craft supplies", price: 5, description:"scissors for crafting", image_url: "https://upload.wikimedia.org/wikipedia/commons/7/76/Pair_of_scissors_with_black_handle%2C_2015-06-07.jpg", place_purchased: "Michael's")
+
+#Inventory
+item1 = Inventory.create(project_id: 1, tool_id: 1)

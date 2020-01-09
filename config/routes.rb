@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :supplies
       resources :materials
       resources :tools
+      resources :inventories
 
     end
   end
