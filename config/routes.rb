@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       resources :projects
       resources :supplies
       resources :materials
+      resources :tools
 
     end
   end
