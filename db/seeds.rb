@@ -22,3 +22,6 @@ scissor = Tool.create(user_id: 1, label: "craft scissors", category: "craft supp
 
 #Inventory
 item1 = Inventory.create(project_id: 1, tool_id: 1)
+
+#tasks
+task1 = Task.create(project_id: 1, item: "build best app")

@@ -1,13 +1,13 @@
 class Api::V1::ProjectsController < ApplicationController
   def index
     @projects = Project.all
-    render json: @projects.to_json(include: [materials: {only: [:id, :supply_id]}, inventories: {only: [:id, :tool_id]}])
-    # (include: [inventories: {only: [:id, :label, :price, :description, :image_url, :place_purchased]}, researches: {only: [:id, :image]}, to_do_lists: {only: [:id, :item, :complete, :process_pic]}, notes: {only: [:id, :note]}])
+    render json: @projects.to_json(include: [materials: {only: [:id, :supply_id]}, inventories: {only: [:id, :tool_id]}, tasks: {only: [:id, :project_id, :item, :complete, :created_at, :updated_at, :process_pic]}])
+    # (include: researches: {only: [:id, :image]}, notes: {only: [:id, :note]}])
   end
 
   def show
     @project = Project.find(params[:id])
-    render json: @project.to_json
+    render json: @project.to_json(include: [materials: {only: [:id, :supply_id]}, inventories: {only: [:id, :tool_id]},tasks: {only: [:id, :project_id, :item, :complete, :created_at, :updated_at, :process_pic]}])
     # (include: [inventories: {only: [:id, :label, :price, :description, :image_url, :place_purchased]}, researches: {only: [:id, :image]}, to_do_lists: {only: [:id, :item, :complete, :process_pic]}, notes: {only: [:id, :note]}])
   end
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resources :materials
       resources :tools
       resources :inventories
+      resources :tasks
 
     end
   end
