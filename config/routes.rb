@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       resources :tools
       resources :inventories
       resources :tasks
-
+      resources :notes
     end
   end
 end

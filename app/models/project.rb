@@ -4,4 +4,5 @@ class Project < ApplicationRecord
   has_many :inventories
   has_many :tools, through: :inventories
   has_many :tasks
+  has_many :notes
 end

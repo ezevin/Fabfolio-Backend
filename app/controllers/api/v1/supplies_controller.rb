@@ -13,9 +13,9 @@ class Api::V1::SuppliesController < ApplicationController
 
   def create
     @supply = Supply.create(supply_params)
-    @user = User.find(params[:user_id])
-
-    UserSupply.create(user_id: params[:user_id], supply_id: @supply.id)
+    # @user = User.find(params[:user_id])
+    #
+    # UserSupply.create(user_id: params[:user_id], supply_id: @supply.id)
 
     render json: @supply
   end

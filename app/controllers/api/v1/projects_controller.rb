@@ -1,7 +1,7 @@
 class Api::V1::ProjectsController < ApplicationController
   def index
     @projects = Project.all
-    render json: @projects.to_json(include: [materials: {only: [:id, :supply_id]}, inventories: {only: [:id, :tool_id]}, tasks: {only: [:id, :project_id, :item, :complete, :created_at, :updated_at, :process_pic]}])
+    render json: @projects.to_json(include: [materials: {only: [:id, :supply_id]}, inventories: {only: [:id, :tool_id]}, tasks: {only: [:id, :project_id, :item, :complete, :created_at, :updated_at, :process_pic]}, notes: {only: [:id, :note]}])
     # (include: researches: {only: [:id, :image]}, notes: {only: [:id, :note]}])
   end
 
