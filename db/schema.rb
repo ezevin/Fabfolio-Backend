@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_31_165700) do
+ActiveRecord::Schema.define(version: 2020_01_31_195811) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(version: 2020_01_31_165700) do
     t.text "description"
     t.string "image_url"
     t.string "place_purchased"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password_digest"
+    t.string "name"
+    t.string "profile_picture", default: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+    t.integer "age"
+    t.text "about_me"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

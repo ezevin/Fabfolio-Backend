@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  belongs_to :user
   has_many :materials
   has_many :supplies, through: :materials
   has_many :inventories

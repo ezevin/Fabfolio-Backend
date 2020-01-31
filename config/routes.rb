@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       resources :inventories
       resources :tasks
       resources :notes
+      resources :users
     end
   end
 end
